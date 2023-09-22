@@ -11,68 +11,6 @@ fun Application.configureRouting() {
 
         productRoute()
 
-//        val productService: ProductRepository = DbProductService()
-//
-//        get("/product"){
-//            call.respond(productService.getAllProduct())
-//        }
-//
-//        get("/product/{id}") {
-//            val id = call.parameters["id"]
-//
-//            if (id == null){
-//                call.respond(
-//                    HttpStatusCode.BadRequest,
-//                    "id parameter should be a number"
-//                )
-//                return@get
-//            }
-//        }
-//
-//        post("/product") {
-//
-//            val product = call.receive<Product>()
-//
-//            val data = productService.addProduct(product)
-//
-//            call.respond(data)
-//        }
-//
-//        put("/product/{id}") {
-//            val product = call.receive<Product>()
-//            val productId = call.parameters["id"]?.toIntOrNull()
-//
-//            if (productId == null) {
-//                call.respond(HttpStatusCode.BadRequest, "id should be a number")
-//                return@put
-//            }
-//
-//            val updated = productService.updateProduct(productId, product)
-//            if (updated) {
-//                call.respond(HttpStatusCode.OK)
-//            } else {
-//                call.respond(HttpStatusCode.NotFound,
-//                    "product not found")
-//            }
-//        }
-//
-//        delete("/product/{id}") {
-//            val productId = call.parameters["id"]?.toIntOrNull()
-//
-//            if (productId == null) {
-//                call.respond(HttpStatusCode.BadRequest, "id should be a number")
-//                return@delete
-//            }
-//
-//            val deleted = productService.deleteProduct(productId)
-//            if (deleted) {
-//                call.respond(HttpStatusCode.OK)
-//            } else {
-//                call.respond(HttpStatusCode.NotFound,
-//                    "product not found")
-//            }
-//        }
-
         // Static plugin. Try to access `/static/index.html`
         static("/static") {
             resources("static")
