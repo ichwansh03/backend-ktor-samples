@@ -21,18 +21,26 @@ class DbProductService : ProductRepository {
     }
 
     override fun getProduct(id: Int): Product? {
-        TODO("Not yet implemented")
+        return database.getProduct(id)?.let {
+            Product(
+                it.id,
+                it.name,
+                it.category,
+                it.price,
+                it.stock
+            )
+        }
     }
 
     override fun addProduct(product: Product): Product {
-        TODO("Not yet implemented")
+        return database.addProduct(product)
     }
 
     override fun updateProduct(id: Int, product: Product): Boolean {
-        TODO("Not yet implemented")
+        return database.updateProduct(id, product)
     }
 
     override fun deleteProduct(id: Int): Boolean {
-        TODO("Not yet implemented")
+        return database.deleteProduct(id)
     }
 }
